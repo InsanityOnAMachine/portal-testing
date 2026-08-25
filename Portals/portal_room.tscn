@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://buu8pbl2ykxo"]
+
+[ext_resource type="Script" uid="uid://c1sgapw15e3u7" path="res://Portals/portal_room.gd" id="1_db2ga"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3ulh2"]
+viewport_path = NodePath("SubViewport")
+
+[node name="PortalRoom" type="Node2D" unique_id=1972959863]
+z_index = 100
+z_as_relative = false
+script = ExtResource("1_db2ga")
+texture = SubResource("ViewportTexture_3ulh2")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=784975319]
+disable_3d = true
+handle_input_locally = false
+debug_draw = 1
+canvas_cull_mask = 4294966273
+size = Vector2i(64, 64)
+render_target_update_mode = 3
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport" unique_id=1767255349]
+position = Vector2(32, 32)
