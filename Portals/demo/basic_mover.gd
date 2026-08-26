@@ -17,6 +17,7 @@ func point_is_ok(pos: Vector2):
 	
 		
 func _process(delta):
+	super._process(delta)
 	
 	var any_pressed = false
 	

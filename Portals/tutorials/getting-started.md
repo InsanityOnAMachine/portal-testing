@@ -12,27 +12,36 @@ Aight here's a real tutorial:
 	
 ## The basics
 
-The portal system has four main Nodes: 
+The portal system has five main Nodes: 
 	
 	- PortalOrigin ("you", in a sense. Portals are drawn with this as the viewpoint)
-	- PortalRoom (groups portals together and provided a render texture)
-	- Portal (used to draw what you can see thru it, plus teleport Portables)
+	- PortalRenderer (what actually draws what you can see through portals; it is separate for rendering reasons)
+	- PortalRoom (groups portals together and provides a render texture)
+	- Portal (used to teleport Portables, along with providing a reference point for PortalOrigins to draw from)
 	- Portable (anything that can go thru Portals. It remembers the current PortalRoom it's in)
 	
 When a PortalOrigin is called to generate those fancy look-through-portal things, it looks at all the Portals
-in the current room it's in and tests which of them it can see. It then obtains a mesh from each one, which has a texture recorded from the room the Portal looks into, thus giving the illusion of the room being right there.
+in the current room it's in and tests which of them it can see. It then obtains a mesh sticking out of each one, which has a texture recorded from the room the Portal looks into, thus giving the illusion of the room being right there.
+
+The PortalRenderer draws portals. It is separate from the PortalOrigin because if you draw a mesh out of a Portal, and a PortalRoom can see this mesh, it gets mad; 
+It tries to record and draw onto the mesh, which then changes what it can see, and it goes into a quasi-loop and
+spews errors in the debugger.
+For this reason, the thing that renders the portals must be on a different visibility layer than the PortalRoom can see (via its capture_layers setting).
+If this is the PortalOrigin, you get into an issue since the PortalOrigin is usually the parent of the sprites it contains, and so the PortalRoom can't see ya;
+you won't be able to look through a Portal and see yourself, which means ya miss out on a big feature of portals!
+So the render is separate and invisible to the camera, while the PortalOrigin can remain visible
 
 The PortalRoom exists to record footage of what's inside it to display on the meshes sticking out of Portals.
 You could forego this and make 1 PortalRoom for each Portal, but you'd be recording the same area with multiple cameras.
 It sort of batches them, if you think about it.
 
-The PortalOrigin is also inherited from Portable, which is a Node that remembers what room it's in and handles teleporting itself.
+The PortalOrigin is inherited from Portable, which is a Node that remembers what room it's in and handles teleporting itself.
 It has a function called get_move() that takes in a Vector2 you want to move along (i.e. you would normally add this vector to the node's position)
 and returns a RoomMovement, which contains:
 	- room (the room you end up in. Could be the one you're already in, unless you walk through a portal)
 	- pos (where in the world you end up)
 	- rot (what direction you end up facing (in degrees))
-which you can use to position yourself accordingly.
+which you can use to manually position yourself accordingly.
 
 That is pretty much it.
 
@@ -45,19 +54,21 @@ Let's make your first portal setup. First, you're gonna need a world.
 If your scene is empty, you won't be able to tell what you're lookin' at thru a Portal, because
 it'll look the same as everything else. The best background for now would just be some random image.
 
-- (Add a Sprite with a good-sized image in it)
+- (Add a Sprite with a good-sized image in it; i.e. room-sized)
 
 Now, create an instance of the portal_room.tscn scene.
 You will notice that the debug setting is on, and should see a yellow rectangle.
-Manipulate the PortalRoom's position and size property in the inspector, so that it contains the image.
+Manipulate the PortalRoom's position and size property in the inspector, so that it covers the image.
 Preferably it goes a bit beyond the edges of the image; it don't need to be precise at all.
 
 - (Create and size an instance of the portal_room.tscn scene)
 
-Now, create two Portals. These should not be children of the PortalRoom;
+Now, create two Portals.  You should be able to find them
+in the Create New Node menu, just like you would when creating any other type of Node.
+
+These should not be children of the PortalRoom;
 because when you want to resize the room's bounds, the top left corner is changed by moving
-the room's global position, which would drag the portals around too. You should be able to find them
-in the Create New Node menu, just like you would when creating any other type of node.
+the room's global position, which would drag the portals around too.
 
 You should see that the debug setting for each of these is on, too, and there should be a visual
 representation of the portsl; i.e. a line showing the portal plane and a little line showing what direction
@@ -70,7 +81,7 @@ Place them somewhere in the room bounds, not too near the edges, and point them 
 - (Create and place two portals)
 
 Now go to the PortalRoom (hopefully ya haven't turned debug off!) and click the 'Collect all Portals within bounds'
-button. This automatically does what it says, so ya don't gotta add each portal to the room's portals Array manually.
+button. This automatically does what it says, so ya don't gotta add each portal to the room's 'portals' Array manually.
 You should see a red dot over each Portal.
 
 - (Connect the Portals to the PortalRoom)
@@ -81,14 +92,24 @@ and you should see a solid green line connecting the two.
 - (Link the Portals)
 
 Movement in the portals sytem is about as hard as making a character controller (pretty easy, but a teensy struggle).
-For this tutorial, instantiate the player.tscn scene in the /demo folder.
+For this tutorial, instantiate the premade player.tscn scene in the /demo folder.
 This comes with a Camera2D that follows it and a Sprite that rotates. It moves using WASD.
 
 - (Create the Player)
 
-Now finally go to the Player and set its current_room setting to be the PortalRoom.
+Now ya should go to the Player and set its current_room setting to be the PortalRoom.
 
 - (Link the Player to the PortalRoom)
 
+Finally, create a PortalRenderer node as a direct child of the scene,
+and set the Player's 'renderer' property to that node.
+The PortalRenderer should be at a high Z level (or just click Top Level in its "CanvasItem / Visibility" inspector group)
+to ensure that it renders its portals on top of everything else.
+
+- (Add a PortalRenderer and link it to the Player)
+
 You should now be able to run your scene and walk around, and look through the portals, and walk thru them too.
 If not, buy a new computer and try again (and of course I am joking?)
+
+If ya don't want the portals to render debug lines and all that, just turn debug off on 'em all.
+If you have a lot of portals, the 'Filter Nodes' search bar above the SceneTree is your friend.

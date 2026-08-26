@@ -7,6 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://bxav4rgy06bqu" path="res://Portals/demo/demo_wall_floor.png" id="4_nxjg0"]
 [ext_resource type="TileSet" uid="uid://bpqxcxa6caqvm" path="res://Portals/demo/demo-floor-wall.tres" id="4_xe3h3"]
 [ext_resource type="PackedScene" uid="uid://60dt68xoca71" path="res://Portals/demo/player.tscn" id="7_asoeu"]
+[ext_resource type="Script" uid="uid://p55dljw7xr2e" path="res://Portals/portal_renderer.gd" id="8_nxjg0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nxjg0"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xe3h3"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7ciuo"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_reody"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i87d"]
 size = Vector2(512, 384)
@@ -17,12 +30,28 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxjg0"]
 size = Vector2(128, 128)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ddsex"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_btufk"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ky5ex"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gxnn7"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6hcyo"]
+viewport_path = NodePath("SubViewport")
+
 [node name="PortalTesting" type="Node2D" unique_id=1748066431]
 
 [node name="Room1" type="Node2D" parent="." unique_id=878595566]
 
 [node name="PortalRoom" parent="Room1" unique_id=1972959863 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal")]
+texture = SubResource("ViewportTexture_nxjg0")
 size = Vector2(448, 320)
 debug = false
 
@@ -78,6 +107,7 @@ position = Vector2(1344, 0)
 
 [node name="PortalRoom" parent="Room2" unique_id=1531253500 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal"), NodePath("../Sprite2D5/Portal")]
+texture = SubResource("ViewportTexture_xe3h3")
 size = Vector2(320, 576)
 debug = false
 
@@ -167,6 +197,7 @@ position = Vector2(0, 1024)
 
 [node name="PortalRoom" parent="Room3" unique_id=520854967 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal")]
+texture = SubResource("ViewportTexture_7ciuo")
 size = Vector2(384, 384)
 debug = false
 
@@ -239,6 +270,7 @@ position = Vector2(1152, 2432)
 
 [node name="PortalRoom" parent="Room4" unique_id=814772763 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Left/Portal"), NodePath("../Up/Portal"), NodePath("../Right/Portal"), NodePath("../Down/Portal"), NodePath("../Rotator/AnimatableBody2D/Right/Portal"), NodePath("../Rotator/AnimatableBody2D/Down/Portal"), NodePath("../Rotator/AnimatableBody2D/Left/Portal"), NodePath("../Rotator/AnimatableBody2D/Up/Portal")]
+texture = SubResource("ViewportTexture_reody")
 size = Vector2(896, 768)
 debug = false
 
@@ -448,6 +480,7 @@ position = Vector2(-64, 2560)
 [node name="PortalRoom" parent="Room5" unique_id=715749654 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 position = Vector2(-64, 0)
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal")]
+texture = SubResource("ViewportTexture_ddsex")
 size = Vector2(320, 256)
 debug = false
 
@@ -504,6 +537,7 @@ position = Vector2(1152, 3976)
 [node name="PortalRoom" parent="Room6" unique_id=1557462900 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 position = Vector2(0, -8)
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal")]
+texture = SubResource("ViewportTexture_btufk")
 size = Vector2(1152, 576)
 debug = false
 
@@ -561,6 +595,7 @@ position = Vector2(1536, 5120)
 [node name="PortalRoom" parent="Room7" unique_id=747714275 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 position = Vector2(-448, -320)
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal")]
+texture = SubResource("ViewportTexture_ky5ex")
 size = Vector2(1152, 832)
 debug = false
 
@@ -602,6 +637,7 @@ position = Vector2(-448, 4992)
 [node name="PortalRoom" parent="Room9" unique_id=1452346393 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 position = Vector2(-256, -256)
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal")]
+texture = SubResource("ViewportTexture_gxnn7")
 size = Vector2(1152, 896)
 debug = false
 
@@ -642,6 +678,7 @@ position = Vector2(-192, 3712)
 
 [node name="PortalRoom" parent="Room8" unique_id=521415377 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal")]
+texture = SubResource("ViewportTexture_6hcyo")
 size = Vector2(576, 704)
 debug = false
 
@@ -706,9 +743,17 @@ tile_set = ExtResource("4_xe3h3")
 collision_enabled = false
 navigation_enabled = false
 
-[node name="Player" parent="." unique_id=1601391877 node_paths=PackedStringArray("current_room") instance=ExtResource("7_asoeu")]
+[node name="Player" parent="." unique_id=1601391877 node_paths=PackedStringArray("renderer", "current_room") instance=ExtResource("7_asoeu")]
+visibility_layer = 1
 position = Vector2(176.00002, 144)
+renderer = NodePath("../PortalRenderer")
 current_room = NodePath("../Room1/PortalRoom")
+
+[node name="PortalRenderer" type="Node2D" parent="." unique_id=1592703668]
+top_level = true
+visibility_layer = 2
+script = ExtResource("8_nxjg0")
+metadata/_custom_type_script = "uid://p55dljw7xr2e"
 
 [connection signal="area_entered" from="Room4/Rotator" to="Room4/Rotator" method="_on_area_entered"]
 [connection signal="area_exited" from="Room4/Rotator" to="Room4/Rotator" method="_on_area_exited"]

@@ -23,7 +23,7 @@ class_name PortalOrigin extends Portable
 ## although Godot seems to handle this pretty well.
 @export var gen_each_frame: bool
 
-var all_meshes: Array[ViewMesh]
+@export var renderer: PortalRenderer
 		
 ## Show the bounds of all rooms one room away from the current one
 @export var show_external_bounds: bool:
@@ -46,18 +46,19 @@ var all_meshes: Array[ViewMesh]
 		show_mesh_bounds = v
 		queue_redraw()
 	
+func _ready():
+	if !current_room: push_warning("PortalOrigin ", self, "'s 'current_room' property is null"); return
+	if !renderer: push_warning("PortalOrigin ", self, "'s 'renderer' property is null")
+	
 func _process(_delta):
 	if Engine.is_editor_hint(): return
 	if gen_each_frame: gen_portals()
 	
 ## Generates and stores all the ViewMeshes from the current position
 func gen_portals():
-	if !current_room: return
-		
-	all_meshes = get_meshes(current_room, global_position, iterations)
-	all_meshes.sort_custom(func(a, b): return b.y > a.y)
-	
-	queue_redraw()
+	if !current_room: push_warning("gen_portals() called on a PortalOrigin with no assigned room"); return
+	if !renderer: push_warning("gen_portals() called on a PortalOrigin with no assigned renderer"); return	
+	renderer.meshes = get_meshes(current_room, global_position, iterations)
 	
 ## Given a room and position within that room, get all the meshes you can from lookin' thru that
 ## room's portals; and the iter parameter is for recursion;
@@ -228,13 +229,6 @@ func _draw():
 	if !(current_room): is_drawing = false; return
 	
 	draw_set_transform_matrix(global_transform.affine_inverse())
-	
-	if !Engine.is_editor_hint():
-		for x in all_meshes:
-			draw_mesh(x.get_mesh(), x.room.texture, Transform2D(0, Vector2.ZERO))
-		# sometimes the draw system needs an extra slap in the face to remember to draw the meshes above
-		# this non-circle does the job somehow
-		draw_circle(Vector2.ZERO, 0, Color.RED)
 	
 	if (show_test_angles or show_portal_visibility_ranges or show_mesh_bounds):
 		# we get the meshes with an iter of zero, and since we're drawing, the debug data gets shown!
