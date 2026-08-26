@@ -61,7 +61,7 @@ position = Vector2(96, 32)
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room1/Sprite2D" unique_id=1757835163 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room1/Sprite2D" unique_id=2009811075 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -77,7 +77,7 @@ rotation = 1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room1/Sprite2D2" unique_id=1714373834 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room1/Sprite2D2" unique_id=884481959 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -93,7 +93,7 @@ rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room1/Sprite2D3" unique_id=2028417191 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room1/Sprite2D3" unique_id=650210357 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -106,7 +106,7 @@ metadata/_custom_type_script = "uid://dfy4j7gwujpwa"
 position = Vector2(1344, 0)
 
 [node name="PortalRoom" parent="Room2" unique_id=1531253500 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
-portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal"), NodePath("../Sprite2D5/Portal")]
+portals = [NodePath("../Sprite2D5/Portal"), NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal")]
 texture = SubResource("ViewportTexture_xe3h3")
 size = Vector2(320, 576)
 debug = false
@@ -118,7 +118,7 @@ rotation = -1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room2/Sprite2D" unique_id=920102862 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room2/Sprite2D" unique_id=190854345 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -134,7 +134,7 @@ rotation = 1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room2/Sprite2D2" unique_id=983163453 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room2/Sprite2D2" unique_id=188905962 node_paths=PackedStringArray("room", "other")]
 position = Vector2(-1.1368684e-13, 0)
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
@@ -151,7 +151,7 @@ rotation = 1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room2/Sprite2D3" unique_id=266273217 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room2/Sprite2D3" unique_id=357646943 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -167,7 +167,7 @@ rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room2/Sprite2D4" unique_id=1005688732 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room2/Sprite2D4" unique_id=2086915765 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -183,7 +183,7 @@ rotation = 4.712389
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room2/Sprite2D5" unique_id=1492059063 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room2/Sprite2D5" unique_id=108856165 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -196,7 +196,7 @@ metadata/_custom_type_script = "uid://dfy4j7gwujpwa"
 position = Vector2(0, 1024)
 
 [node name="PortalRoom" parent="Room3" unique_id=520854967 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
-portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal")]
+portals = [NodePath("../Sprite2D4/Portal"), NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D2/Portal"), NodePath("../Sprite2D3/Portal")]
 texture = SubResource("ViewportTexture_7ciuo")
 size = Vector2(384, 384)
 debug = false
@@ -207,7 +207,7 @@ position = Vector2(192, 32)
 scale = Vector2(32, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room3/Sprite2D" unique_id=286463840 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room3/Sprite2D" unique_id=1150568240 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -223,7 +223,7 @@ rotation = 1.5707964
 scale = Vector2(32, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room3/Sprite2D2" unique_id=1420946092 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room3/Sprite2D2" unique_id=1281662902 node_paths=PackedStringArray("room", "other")]
 position = Vector2(-1.1368684e-13, 0)
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
@@ -240,7 +240,7 @@ rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room3/Sprite2D3" unique_id=970789761 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room3/Sprite2D3" unique_id=1796165924 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -256,7 +256,7 @@ rotation = -1.5707964
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room3/Sprite2D4" unique_id=1144201247 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room3/Sprite2D4" unique_id=302156549 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -269,7 +269,7 @@ metadata/_custom_type_script = "uid://dfy4j7gwujpwa"
 position = Vector2(1152, 2432)
 
 [node name="PortalRoom" parent="Room4" unique_id=814772763 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
-portals = [NodePath("../Sprite2D/Portal"), NodePath("../Left/Portal"), NodePath("../Up/Portal"), NodePath("../Right/Portal"), NodePath("../Down/Portal"), NodePath("../Rotator/AnimatableBody2D/Right/Portal"), NodePath("../Rotator/AnimatableBody2D/Down/Portal"), NodePath("../Rotator/AnimatableBody2D/Left/Portal"), NodePath("../Rotator/AnimatableBody2D/Up/Portal")]
+portals = [NodePath("../Rotator/AnimatableBody2D/Up/Portal"), NodePath("../Sprite2D/Portal"), NodePath("../Left/Portal"), NodePath("../Up/Portal"), NodePath("../Right/Portal"), NodePath("../Down/Portal"), NodePath("../Rotator/AnimatableBody2D/Right/Portal"), NodePath("../Rotator/AnimatableBody2D/Down/Portal"), NodePath("../Rotator/AnimatableBody2D/Left/Portal")]
 texture = SubResource("ViewportTexture_reody")
 size = Vector2(896, 768)
 debug = false
@@ -280,7 +280,7 @@ position = Vector2(192, 32)
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Sprite2D" unique_id=318577225 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Sprite2D" unique_id=734274460 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -296,7 +296,7 @@ rotation = -1.5707964
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Left" unique_id=893425343 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Left" unique_id=2018656950 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -311,7 +311,7 @@ position = Vector2(448, 32)
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Up" unique_id=1870494922 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Up" unique_id=1211631116 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -327,7 +327,7 @@ rotation = 1.5707964
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Right" unique_id=205315410 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Right" unique_id=1476029644 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -343,7 +343,7 @@ rotation = 3.1415927
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Down" unique_id=337776258 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Down" unique_id=1372615291 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -418,7 +418,7 @@ rotation = -1.5707964
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Rotator/AnimatableBody2D/Right" unique_id=1527792783 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Rotator/AnimatableBody2D/Right" unique_id=1210647535 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../../../PortalRoom")
@@ -433,7 +433,7 @@ position = Vector2(0, 96)
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Rotator/AnimatableBody2D/Down" unique_id=1571575084 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Rotator/AnimatableBody2D/Down" unique_id=1538375643 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../../../PortalRoom")
@@ -449,7 +449,7 @@ rotation = 1.5707964
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Rotator/AnimatableBody2D/Left" unique_id=150728817 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Rotator/AnimatableBody2D/Left" unique_id=1727065187 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../../../PortalRoom")
@@ -465,7 +465,7 @@ rotation = 3.1415927
 scale = Vector2(16, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room4/Rotator/AnimatableBody2D/Up" unique_id=971295192 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room4/Rotator/AnimatableBody2D/Up" unique_id=1165733308 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../../../PortalRoom")
@@ -479,7 +479,7 @@ position = Vector2(-64, 2560)
 
 [node name="PortalRoom" parent="Room5" unique_id=715749654 node_paths=PackedStringArray("portals") instance=ExtResource("1_3ulh2")]
 position = Vector2(-64, 0)
-portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D3/Portal"), NodePath("../Sprite2D4/Portal")]
+portals = [NodePath("../Sprite2D/Portal"), NodePath("../Sprite2D4/Portal"), NodePath("../Sprite2D3/Portal")]
 texture = SubResource("ViewportTexture_ddsex")
 size = Vector2(320, 256)
 debug = false
@@ -490,7 +490,7 @@ position = Vector2(96, 32)
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room5/Sprite2D" unique_id=805965301 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room5/Sprite2D" unique_id=692045228 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -506,7 +506,7 @@ rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room5/Sprite2D3" unique_id=486467228 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room5/Sprite2D3" unique_id=2080113100 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -522,7 +522,7 @@ rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room5/Sprite2D4" unique_id=1555465909 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room5/Sprite2D4" unique_id=2008165964 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -548,7 +548,7 @@ rotation = -1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room6/Sprite2D" unique_id=2031716861 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room6/Sprite2D" unique_id=303322429 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -564,7 +564,7 @@ rotation = 1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room6/Sprite2D2" unique_id=2009108016 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room6/Sprite2D2" unique_id=993208840 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -580,7 +580,7 @@ rotation = 4.712389
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room6/Sprite2D3" unique_id=651495941 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room6/Sprite2D3" unique_id=1994230993 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -606,7 +606,7 @@ rotation = -1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room7/Sprite2D" unique_id=99705243 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room7/Sprite2D" unique_id=658544737 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -622,7 +622,7 @@ rotation = 1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room7/Sprite2D2" unique_id=1729108791 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room7/Sprite2D2" unique_id=654754055 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -648,7 +648,7 @@ rotation = -1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room9/Sprite2D" unique_id=1351336746 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room9/Sprite2D" unique_id=421860139 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -664,7 +664,7 @@ rotation = 1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room9/Sprite2D2" unique_id=1798552311 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room9/Sprite2D2" unique_id=451661537 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -689,7 +689,7 @@ rotation = -1.5707964
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room8/Sprite2D" unique_id=1072224849 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room8/Sprite2D" unique_id=1649508165 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -705,7 +705,7 @@ rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room8/Sprite2D2" unique_id=742487037 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room8/Sprite2D2" unique_id=481969329 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")
@@ -721,7 +721,7 @@ rotation = 6.2831855
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxjg0")
 
-[node name="Portal" type="Node2D" parent="Room8/Sprite2D3" unique_id=582687149 node_paths=PackedStringArray("room", "other")]
+[node name="Portal" type="Area2D" parent="Room8/Sprite2D3" unique_id=1847877240 node_paths=PackedStringArray("room", "other")]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("3_nxjg0")
 room = NodePath("../../PortalRoom")

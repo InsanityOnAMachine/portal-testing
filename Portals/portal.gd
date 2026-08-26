@@ -1,5 +1,5 @@
 @tool
-class_name Portal extends Node2D
+class_name Portal extends Area2D
 
 ## The Portal class is basically just a plane that connects to another Portal,
 ## And handles transforms between the two.

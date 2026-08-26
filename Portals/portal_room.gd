@@ -76,7 +76,8 @@ func collect_portals_within_bounds():
 	typed_portal_array.assign(portals_within_bounds)
 
 	portals = typed_portal_array
-		
+	# https://forum.godotengine.org/t/anyone-know-how-to-refresh-the-inspector-panel-in-editor-from-gdscript-its-solved/16356
+	notify_property_list_changed()
 
 func _ready():
 	# by default, viewports only render their little worlds inside. We don't want that.
