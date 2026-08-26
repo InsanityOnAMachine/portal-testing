@@ -113,3 +113,20 @@ If not, buy a new computer and try again (and of course I am joking?)
 
 If ya don't want the portals to render debug lines and all that, just turn debug off on 'em all.
 If you have a lot of portals, the 'Filter Nodes' search bar above the SceneTree is your friend.
+
+- (Test everything works)
+
+Now you probably want to make another room. Like before, make a new image, and position it far away from the other one.
+You should be able to go to the edge of the first room and not be able to see the second, that far away.
+Add and size a PortalRoom for it also.
+
+- (Create a new PortalRoom)
+
+Now, drag one of the portals from the first room to the second, and go to both PortalRooms and press the 
+'Collect all Portals Within Bounds' button on each to relink the portals.
+
+- (Relink the Portals)
+
+You should now be able to walk from one room to the other using the portals.
+
+- (Walk around and be happy)
