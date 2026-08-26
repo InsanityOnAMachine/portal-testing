@@ -35,7 +35,7 @@ class_name Portal extends Node2D
 		if debug: queue_redraw()
 
 ## The width of the Portal; independent of any actual scaling in-game
-@export var width: float:
+@export var width: float = 64:
 	set(v):
 		width = v
 		queue_redraw()
@@ -46,6 +46,7 @@ class_name Portal extends Node2D
 		queue_redraw()
 		
 func _ready():
+	if Engine.is_editor_hint(): return
 	assert(other != null, "Portal %s's 'other' parameter is null" % self)
 	assert(other.other == self, "Portal %s's 'other' doesn't connect back to it" % self)
 	assert(room != null, "Portal %s's 'room' parameter is null" % self)

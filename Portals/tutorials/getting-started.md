@@ -74,6 +74,9 @@ You should see that the debug setting for each of these is on, too, and there sh
 representation of the portsl; i.e. a line showing the portal plane and a little line showing what direction
 the portal is facing. When you walk into a portal, this line is pointing towards you. It is the "front" of the portal.
 
+If you don't see these, make sure the portals' debug setting is on and also that they are above the background;
+i.e. at the bottom of the scene tree, and not a child of the background image / PortalRoom
+
 You can rotate portals to change their direction, and change their size via their width setting in the inspector
 (NOT by scaling them; they ignore their scale in the scene.)
 Place them somewhere in the room bounds, not too near the edges, and point them wherever.
