@@ -6,6 +6,11 @@ class_name Portal extends Area2D
 ## A Portable queries the Portals in the room it's in to manage teleportation
 ## A PortalOrigin uses the Portals in the room it's in to collect and render out ViewMeshes
 
+# The collider used for sprite clipping detecting
+@onready var collider = $CollisionShape2D
+
+@export var renderer: PortalSpriteRenderer
+
 ## The PortalRoom this Portal belongs to
 @export var room: PortalRoom:
 	set(new_room):
@@ -38,6 +43,7 @@ class_name Portal extends Area2D
 @export var width: float = 64:
 	set(v):
 		width = v
+		if collider: calibrate_collider()
 		queue_redraw()
 
 @export var debug: bool = true:
@@ -51,7 +57,21 @@ func _ready():
 	assert(other.other == self, "Portal %s's 'other' doesn't connect back to it" % self)
 	assert(room != null, "Portal %s's 'room' parameter is null" % self)
 	assert(room.portals.has(self), "Portal %s's 'room' parameter doesn't have the portal in its 'portals' array" % self)
-
+	calibrate_collider()
+	
+# https://github.com/godotengine/godot-proposals/discussions/11599
+static func get_global_z_index(target: CanvasItem) -> int:
+	var global_z_index: int = 0
+	while target and target is CanvasItem:
+		global_z_index += target.z_index      
+		if not target.z_as_relative:
+			break
+		var parent = target.get_parent()
+		if not parent or parent is not CanvasItem:
+			break
+		target = parent
+	return global_z_index
+	
 # https://docs.godotengine.org/en/stable/tutorials/2d/custom_drawing_in_2d.html
 func _draw():
 	if !debug: return
@@ -84,6 +104,30 @@ func _draw():
 	var line_end = global_position + get_normal() * 16
 	draw_line(global_position, line_end, Color.WHITE)
 	draw_circle(line_end, 3, Color.AZURE)
+
+func _on_body_entered(body: Node2D):
+	if body is not Portable: return
+	if !renderer: return
+	renderer.intermediate_bodies.append(PortalSpriteRenderer.IntermediateBody.new(body as Portable, self))
+
+func _on_body_exited(body: Node2D):
+	var pos = renderer.intermediate_bodies.find_custom(func(x): return x.portable == body and x.portal == self)
+	if pos != -1: renderer.intermediate_bodies.remove_at(pos)
+
+func _on_area_entered(area: Area2D) -> void:
+	_on_body_entered(area as Node2D)
+
+func _on_area_exited(area: Area2D) -> void:
+	_on_body_exited(area as Node2D)
+
+## Makes the collider match the portal's range in world space [br]
+## This might have all sorts of problems with scaling;
+## I.E. DOES IT DETECT POS CHANGE?! 
+func calibrate_collider():
+	# remove this later
+	if !collider: return
+	collider.shape.a = to_local(get_start())
+	collider.shape.b = to_local(get_end())
 
 ## Takes a Vector2 and transforms it through the portal
 func port_pos(pos: Vector2) -> Vector2:

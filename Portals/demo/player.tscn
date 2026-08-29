@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krb5w"]
 size = Vector2(31.999992, 32)
 
-[node name="Player" type="Area2D" unique_id=1601391877]
+[node name="Player" type="Area2D" unique_id=534574566]
 visibility_layer = 2
 script = ExtResource("1_y4dqr")
 speed = 200.0

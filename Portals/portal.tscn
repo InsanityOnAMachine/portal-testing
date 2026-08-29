@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kf12ie6tbi3r"]
+
+[ext_resource type="Script" uid="uid://dfy4j7gwujpwa" path="res://Portals/portal.gd" id="1_1hv46"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_krb5w"]
+a = Vector2(-32, 0)
+b = Vector2(32, 0)
+
+[node name="Portal" type="Area2D" unique_id=509636566]
+script = ExtResource("1_1hv46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=290886154]
+shape = SubResource("SegmentShape2D_krb5w")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
