@@ -15,9 +15,8 @@ func point_is_ok(pos: Vector2):
 
 	return get_viewport().get_world_2d().get_direct_space_state().intersect_shape(sqparams).size() == 0
 	
-		
-func _process(delta):
-	super._process(delta)
+# SO portal renderers can detect it	
+func _physics_process(delta):
 	
 	var any_pressed = false
 	
@@ -44,11 +43,19 @@ func _process(delta):
 		
 	if !any_pressed: return
 		
-	var move = get_move(Vector2.from_angle(sprite.global_rotation) * speed * delta)
+	var movement = Vector2.from_angle(sprite.global_rotation) * speed * delta
+	var move = get_move(movement)
 	
 	if !point_is_ok(move.pos): return
 	
+	# we emit the signal later, after we move. Could pass the move as the signal arg, but later.
+	# We check position change; you can be teleported and still have your room and rotation be the same
+	var should_tp = move.pos != global_position + movement
+
 	global_position = move.pos
 	global_rotation_degrees = move.rot
+	
+	if should_tp: teleport.emit(self);
+	
 	current_room = move.room
 	gen_portals()

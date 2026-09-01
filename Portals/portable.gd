@@ -41,3 +41,5 @@ func get_move(movement: Vector2):
 			)
 			
 	return RoomMovement.new(current_room, end, global_rotation_degrees)
+
+signal teleport(body: Portable)

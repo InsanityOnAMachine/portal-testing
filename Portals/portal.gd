@@ -105,20 +105,43 @@ func _draw():
 	draw_line(global_position, line_end, Color.WHITE)
 	draw_circle(line_end, 3, Color.AZURE)
 
-func _on_body_entered(body: Node2D):
-	if body is not Portable: return
+## Process intersecting Portables' Sprites
+
+func _process(_delta):
+	if Engine.is_editor_hint(): return
+	process_colliding_portables()
+
+func process_colliding_portables():
 	if !renderer: return
-	renderer.intermediate_bodies.append(PortalSpriteRenderer.IntermediateBody.new(body as Portable, self))
+	
+	var params = PhysicsShapeQueryParameters2D.new()
+	params.collide_with_areas = true
+	params.shape = collider.shape
+	params.transform = collider.global_transform
+	
+	var results = get_world_2d().direct_space_state.intersect_shape(params)
+	var current_colliding_portables: Array[Portable] = []
+	
+	for collision_info in results:
+		var body = collision_info.collider
+		if body is not Portable: continue
+		if current_colliding_portables.has(body): return
+		current_colliding_portables.append(body as Portable)
+		
+		if !renderer.intermediate_bodies.get_or_add(self, []).has(body): 
+			if !body.teleport.is_connected(transfer_portable):
+				body.teleport.connect(transfer_portable)
+		
+	current_colliding_portables.sort()
+	
+	if renderer.intermediate_bodies.get_or_add(self, []) != current_colliding_portables:	
+		renderer.intermediate_bodies[self] = current_colliding_portables
 
-func _on_body_exited(body: Node2D):
-	var pos = renderer.intermediate_bodies.find_custom(func(x): return x.portable == body and x.portal == self)
-	if pos != -1: renderer.intermediate_bodies.remove_at(pos)
-
-func _on_area_entered(area: Area2D) -> void:
-	_on_body_entered(area as Node2D)
-
-func _on_area_exited(area: Area2D) -> void:
-	_on_body_exited(area as Node2D)
+func transfer_portable(body: Portable):
+	renderer.intermediate_bodies[other].append(body)
+	body.teleport.disconnect(transfer_portable)
+	if !body.teleport.is_connected(other.transfer_portable):
+		body.teleport.connect(other.transfer_portable)
 
 ## Makes the collider match the portal's range in world space [br]
 ## This might have all sorts of problems with scaling;

@@ -66,6 +66,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room2/Sprite2D3/Portal")
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room1" unique_id=1283948828]
 texture_filter = 1
@@ -78,6 +79,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Sprite2D3/Portal")
+debug = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Room1" unique_id=535523429]
 texture_filter = 1
@@ -90,6 +92,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Sprite2D2/Portal")
+debug = false
 
 [node name="Room2" type="Node2D" parent="." unique_id=1738648032]
 position = Vector2(1344, 0)
@@ -111,6 +114,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Sprite2D2/Portal")
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room2" unique_id=65018631]
 texture_filter = 1
@@ -123,6 +127,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Sprite2D/Portal")
+debug = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Room2" unique_id=1459230316]
 texture_filter = 1
@@ -135,6 +140,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room1/Sprite2D/Portal")
+debug = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="Room2" unique_id=1897474517]
 texture_filter = 1
@@ -147,6 +153,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room3/Sprite2D3/Portal")
+debug = false
 
 [node name="Sprite2D5" type="Sprite2D" parent="Room2" unique_id=967242037]
 texture_filter = 1
@@ -159,6 +166,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room5/Sprite2D/Portal")
+debug = false
 
 [node name="Room3" type="Node2D" parent="." unique_id=748257415]
 position = Vector2(0, 1024)
@@ -179,6 +187,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Sprite2D2/Portal")
+width = 256.0
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room3" unique_id=1324548758]
 texture_filter = 1
@@ -191,6 +201,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Sprite2D/Portal")
+width = 256.0
+debug = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Room3" unique_id=6672364]
 texture_filter = 1
@@ -203,6 +215,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room2/Sprite2D4/Portal")
+debug = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="Room3" unique_id=542865214]
 texture_filter = 1
@@ -215,6 +228,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room4/Sprite2D/Portal")
+width = 128.0
+debug = false
 
 [node name="Room4" type="Node2D" parent="." unique_id=808540087]
 position = Vector2(1152, 2432)
@@ -235,6 +250,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room3/Sprite2D4/Portal")
+width = 128.0
+debug = false
 
 [node name="Left" type="Sprite2D" parent="Room4" unique_id=905214939]
 texture_filter = 1
@@ -247,6 +264,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Rotator/AnimatableBody2D/Left/Portal")
+width = 128.0
+debug = false
 
 [node name="Up" type="Sprite2D" parent="Room4" unique_id=725733696]
 texture_filter = 1
@@ -258,6 +277,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Rotator/AnimatableBody2D/Up/Portal")
+width = 128.0
+debug = false
 
 [node name="Right" type="Sprite2D" parent="Room4" unique_id=159715894]
 texture_filter = 1
@@ -270,6 +291,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Rotator/AnimatableBody2D/Right/Portal")
+width = 128.0
+debug = false
 
 [node name="Down" type="Sprite2D" parent="Room4" unique_id=1669064599]
 texture_filter = 1
@@ -282,6 +305,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../Rotator/AnimatableBody2D/Down/Portal")
+width = 128.0
+debug = false
 
 [node name="Rotator" type="Area2D" parent="Room4" unique_id=41126308]
 script = ExtResource("4_7ciuo")
@@ -353,6 +378,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../../../PortalSpriteRenderer")
 room = NodePath("../../../../PortalRoom")
 other = NodePath("../../../../Right/Portal")
+width = 128.0
+debug = false
 
 [node name="Down" type="Sprite2D" parent="Room4/Rotator/AnimatableBody2D" unique_id=786779435]
 texture_filter = 1
@@ -364,6 +391,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../../../PortalSpriteRenderer")
 room = NodePath("../../../../PortalRoom")
 other = NodePath("../../../../Down/Portal")
+width = 128.0
+debug = false
 
 [node name="Left" type="Sprite2D" parent="Room4/Rotator/AnimatableBody2D" unique_id=100430208]
 texture_filter = 1
@@ -376,6 +405,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../../../PortalSpriteRenderer")
 room = NodePath("../../../../PortalRoom")
 other = NodePath("../../../../Left/Portal")
+width = 128.0
+debug = false
 
 [node name="Up" type="Sprite2D" parent="Room4/Rotator/AnimatableBody2D" unique_id=1968274391]
 texture_filter = 1
@@ -388,6 +419,8 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../../../PortalSpriteRenderer")
 room = NodePath("../../../../PortalRoom")
 other = NodePath("../../../../Up/Portal")
+width = 128.0
+debug = false
 
 [node name="Room5" type="Node2D" parent="." unique_id=943597415]
 position = Vector2(-64, 2560)
@@ -409,6 +442,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room2/Sprite2D5/Portal")
+debug = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Room5" unique_id=807870118]
 texture_filter = 1
@@ -421,6 +455,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room6/Sprite2D/Portal")
+debug = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="Room5" unique_id=339672257]
 texture_filter = 1
@@ -433,6 +468,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room8/Sprite2D/Portal")
+debug = false
 
 [node name="Room6" type="Node2D" parent="." unique_id=149239432]
 position = Vector2(1152, 3976)
@@ -455,6 +491,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room5/Sprite2D3/Portal")
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room6" unique_id=850174846]
 texture_filter = 1
@@ -467,6 +504,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room7/Sprite2D/Portal")
+debug = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Room6" unique_id=1359968072]
 texture_filter = 1
@@ -479,6 +517,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room7/Sprite2D2/Portal")
+debug = false
 
 [node name="Room7" type="Node2D" parent="." unique_id=1341699685]
 position = Vector2(1536, 5120)
@@ -501,6 +540,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room6/Sprite2D2/Portal")
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room7" unique_id=1718151394]
 texture_filter = 1
@@ -513,6 +553,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room6/Sprite2D3/Portal")
+debug = false
 
 [node name="Room9" type="Node2D" parent="." unique_id=1806596972]
 position = Vector2(-448, 4992)
@@ -535,6 +576,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room8/Sprite2D3/Portal")
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room9" unique_id=495353494]
 texture_filter = 1
@@ -547,6 +589,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room8/Sprite2D2/Portal")
+debug = false
 
 [node name="Room8" type="Node2D" parent="." unique_id=1184126638]
 position = Vector2(-192, 3712)
@@ -568,6 +611,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room5/Sprite2D4/Portal")
+debug = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Room8" unique_id=1632662965]
 texture_filter = 1
@@ -580,6 +624,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room9/Sprite2D2/Portal")
+debug = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Room8" unique_id=838643783]
 texture_filter = 1
@@ -592,6 +637,7 @@ texture = ExtResource("2_nxjg0")
 renderer = NodePath("../../../PortalSpriteRenderer")
 room = NodePath("../../PortalRoom")
 other = NodePath("../../../Room9/Sprite2D/Portal")
+debug = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1405045613]
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAAAAAMAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAGAAMAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAFAAAAAAABAAAAAAAEAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAVAAAAAAABAAAAAAAVAAEAAAABAAAAAAAVAAMAAAABAAAAAAAVAAQAAAABAAAAAAAVAAUAAAABAAAAAAAVAAYAAAABAAAAAAAVAAgAAAABAAAAAAAWAAAAAAABAAAAAAAWAAgAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAYAAEAAAABAAAAAAAYAAMAAAABAAAAAAAYAAQAAAABAAAAAAAYAAUAAAABAAAAAAAYAAYAAAABAAAAAAAYAAgAAAABAAAAAAAZAAYAAAABAAAAAAAZAAcAAAABAAAAAAAZAAgAAAABAAAAAAAAABAAAAABAAAAAAAFABAAAAABAAAAAAAFABUAAAABAAAAAAAEABUAAAABAAAAAAADABUAAAABAAAAAAACABUAAAABAAAAAAAAABUAAAABAAAAAAAAABQAAAABAAAAAAAAABEAAAABAAAAAAASACYAAAABAAAAAAASACcAAAABAAAAAAASACgAAAABAAAAAAASACkAAAABAAAAAAASACoAAAABAAAAAAASAC0AAAABAAAAAAASAC4AAAABAAAAAGASAC8AAAABAAAAAGASADAAAAABAAAAAGASADEAAAABAAAAAGATACYAAAABAAAAAAATADEAAAABAAAAAGAUADEAAAABAAAAAAAVADEAAAABAAAAAAAWACYAAAABAAAAAAAWADEAAAABAAAAAAAXACYAAAABAAAAAAAXADEAAAABAAAAAAAaACYAAAABAAAAAAAaADEAAAABAAAAAAAbACYAAAABAAAAAAAbADEAAAABAAAAAAAcACYAAAABAAAAAAAcADEAAAABAAAAADAdACYAAAABAAAAAFAdADEAAAABAAAAADAeACYAAAABAAAAAFAeADEAAAABAAAAADAfACYAAAABAAAAAFAfACcAAAABAAAAAFAfACgAAAABAAAAAFAfACkAAAABAAAAAFAfACoAAAABAAAAAAAfAC0AAAABAAAAAAAfAC4AAAABAAAAAAAfAC8AAAABAAAAADAfADAAAAABAAAAADAfADEAAAABAAAAADD+/ygAAAABAAAAAAD//ygAAAABAAAAAAABACgAAAABAAAAAAACACgAAAABAAAAAAACACkAAAABAAAAAAACACoAAAABAAAAAAACACsAAAABAAAAAAAAACsAAAABAAAAAAD+/ysAAAABAAAAAAD+/yoAAAABAAAAAAD+/ykAAAABAAAAAAD9/zsAAAABAAAAAAD9/zwAAAABAAAAAAD9/z0AAAABAAAAAAD9/z4AAAABAAAAAAD9/0AAAAABAAAAAAD9/0EAAAABAAAAAAD9/0IAAAABAAAAAAD9/0MAAAABAAAAAAAFAEMAAAABAAAAAAAFADsAAAABAAAAAAAFADwAAAABAAAAAAAFAD0AAAABAAAAAAAFAD4AAAABAAAAAAAFAD8AAAABAAAAAAAFAEAAAAABAAAAAAAFAEEAAAABAAAAAAAFAEIAAAABAAAAAAAAAD0AAAABAAAAAAAAAD4AAAABAAAAAAAAAD8AAAABAAAAAAAAAEAAAAABAAAAAAAAAEEAAAABAAAAAAACAD0AAAABAAAAAAACAD4AAAABAAAAAAACAD8AAAABAAAAAAACAEAAAAABAAAAAAACAEEAAAABAAAAAAD9/zoAAAABAAAAAAD+/zoAAAABAAAAAAD//zoAAAABAAAAAAAAADoAAAABAAAAAAABADoAAAABAAAAAAACADoAAAABAAAAAAADADoAAAABAAAAAAAEADoAAAABAAAAAAAFADoAAAABAAAAAAD9/0QAAAABAAAAAAD+/0QAAAABAAAAAAD//0QAAAABAAAAAAAAAEQAAAABAAAAAAABAEQAAAABAAAAAAACAEQAAAABAAAAAAADAEQAAAABAAAAAAAEAEQAAAABAAAAAAAFAEQAAAABAAAAAAD5/08AAAABAAAAAAD6/08AAAABAAAAAAD7/08AAAABAAAAAAD5/1EAAAABAAAAAAD6/1EAAAABAAAAAAD6/1IAAAABAAAAAAD8/08AAAABAAAAAAD8/1AAAAABAAAAAAD8/1EAAAABAAAAAAD6/1MAAAABAAAAAAD7/1MAAAABAAAAAAD8/1MAAAABAAAAAAD9/1MAAAABAAAAAAD+/1MAAAABAAAAAAD+/1AAAAABAAAAAAD+/1EAAAABAAAAAAD+/1IAAAABAAAAAAD8/04AAAABAAAAAAD9/04AAAABAAAAAAD+/04AAAABAAAAAAD//04AAAABAAAAAAAAAE4AAAABAAAAAAAAAE8AAAABAAAAAAAAAFAAAAABAAAAAAAAAFEAAAABAAAAAAD//1MAAAABAAAAAAAAAFMAAAABAAAAAAABAFMAAAABAAAAAAACAFMAAAABAAAAAAACAFIAAAABAAAAAAABAFAAAAABAAAAAAACAFAAAAABAAAAAAASAD8AAAABAAAAAAASAEAAAAABAAAAAAASAEEAAAABAAAAAAASAEMAAAABAAAAAAASAEQAAAABAAAAAAASAEUAAAABAAAAAAASAEYAAAABAAAAAAAjAD8AAAABAAAAAAAjAEAAAAABAAAAAAAjAEEAAAABAAAAAAAjAEIAAAABAAAAAAAjAEMAAAABAAAAAAAjAEQAAAABAAAAAAAjAEUAAAABAAAAAAAjAEYAAAABAAAAAAAVAEEAAAABAAAAAAAWAEEAAAABAAAAAAAXAEEAAAABAAAAAAAYAEEAAAABAAAAAAAZAEEAAAABAAAAAAAaAEEAAAABAAAAAAAbAEEAAAABAAAAAAAcAEEAAAABAAAAAAAdAEEAAAABAAAAAAAeAEEAAAABAAAAAAAfAEEAAAABAAAAAAAgAEEAAAABAAAAAAAVAEMAAAABAAAAAAAWAEMAAAABAAAAAAAXAEMAAAABAAAAAAAYAEMAAAABAAAAAAAZAEMAAAABAAAAAAAaAEMAAAABAAAAAAAbAEMAAAABAAAAAAAcAEMAAAABAAAAAAAdAEMAAAABAAAAAAAeAEMAAAABAAAAAAAfAEMAAAABAAAAAAAgAEMAAAABAAAAAAATAEYAAAABAAAAAAAUAEYAAAABAAAAAAAVAEYAAAABAAAAAAAWAEYAAAABAAAAAAAXAEYAAAABAAAAAAAYAEYAAAABAAAAAAAZAEYAAAABAAAAAAAaAEYAAAABAAAAAAAbAEYAAAABAAAAAAAcAEYAAAABAAAAAAAdAEYAAAABAAAAAAAeAEYAAAABAAAAAAAfAEYAAAABAAAAAAAgAEYAAAABAAAAAAAhAEYAAAABAAAAAAAiAEYAAAABAAAAAAASAD4AAAABAAAAAAATAD4AAAABAAAAAAAUAD4AAAABAAAAAAAVAD4AAAABAAAAAAAWAD4AAAABAAAAAAAXAD4AAAABAAAAAAAYAD4AAAABAAAAAAAZAD4AAAABAAAAAAAaAD4AAAABAAAAAAAbAD4AAAABAAAAAAAcAD4AAAABAAAAAAAdAD4AAAABAAAAAAAeAD4AAAABAAAAAAAfAD4AAAABAAAAAAAgAD4AAAABAAAAAAAhAD4AAAABAAAAAAAiAD4AAAABAAAAAAAjAD4AAAABAAAAAAAYAFAAAAABAAAAAAAZAFAAAAABAAAAAAAaAFAAAAABAAAAAAAYAFIAAAABAAAAAAAZAFIAAAABAAAAAAAaAFIAAAABAAAAAAAbAFIAAAABAAAAAAAbAFAAAAABAAAAAAA=")
