@@ -154,7 +154,33 @@ func calibrate_collider():
 
 ## Takes a Vector2 and transforms it through the portal
 func port_pos(pos: Vector2) -> Vector2:
-	return other.global_position + (pos - global_position).rotated(deg_to_rad(rotation_change_through()))
+	return other.global_position + (pos - global_position).rotated(deg_to_rad(rotation_change_through())) * scale_change_through()
+	
+## Takes a rotation (in degrees) and transforms it through the portal
+func port_rot(rot: float) -> float:
+	return rot + rotation_change_through()
+
+## Takes a scale (Vector2 or float) and transforms it through the portal
+func port_scale(s):
+	return s * scale_change_through()
+	
+func port_transform(t: Transform2D):
+	return Transform2D(
+		deg_to_rad(port_rot(rad_to_deg(t.get_rotation()))),
+		port_scale(t.get_scale()),
+		t.get_skew(),
+		port_pos(t.get_origin())
+	)
+	
+## If you walk through the portal, this is how many degrees you'll have to turn 
+## to be facing the same direction relative to the portal you come out of
+func rotation_change_through():
+	return fmod((other.global_rotation_degrees + 180) - global_rotation_degrees, 360)
+
+## If you walk through the portal, this is how much your scale will be multiplied by
+func scale_change_through():
+	return other.width / width
+
 
 ## Is this point in front of the portal? Points right on the portal are considered behind it.
 ## This doesn't take width into account; the portal is considered an infinite line
@@ -198,8 +224,3 @@ func get_start():
 ## The ending point of the portal; if your portal is a door, the side where the handle is
 func get_end():
 	return global_position + (Vector2.from_angle(global_rotation) * (width / 2) * .99)
-	
-## If you walk through the portal, this is how many degrees you'll have to turn 
-## to be facing the same direction relative to the portal you come out of
-func rotation_change_through():
-	return fmod((other.global_rotation_degrees + 180) - global_rotation_degrees, 360)

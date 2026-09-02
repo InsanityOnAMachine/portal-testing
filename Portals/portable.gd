@@ -11,11 +11,13 @@ class RoomMovement:
 	var room: PortalRoom
 	var pos: Vector2
 	var rot: float
+	var scl: Vector2
 	
-	func _init(_room: PortalRoom, _pos: Vector2, _rot: float):
+	func _init(_room: PortalRoom, _pos: Vector2, _rot: float, _scl: Vector2):
 		room = _room
 		pos = _pos
 		rot = _rot
+		scl = _scl
 		
 
 func _ready():
@@ -37,9 +39,10 @@ func get_move(movement: Vector2):
 			return RoomMovement.new(
 				portal.other.room,
 				portal.port_pos(end),
-				global_rotation_degrees + portal.rotation_change_through()
+				portal.port_rot(global_rotation_degrees),
+				portal.port_scale(global_scale)
 			)
 			
-	return RoomMovement.new(current_room, end, global_rotation_degrees)
+	return RoomMovement.new(current_room, end, global_rotation_degrees, global_scale)
 
 signal teleport(body: Portable)

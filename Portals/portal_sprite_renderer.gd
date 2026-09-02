@@ -21,7 +21,7 @@ func _draw():
 					global_transform.affine_inverse() * 
 					Transform2D(
 						deg_to_rad(
-							sprite.global_rotation_degrees + portal.rotation_change_through()
+							portal.port_rot(sprite.global_rotation_degrees)
 						), 
 						sprite.scale,
 						sprite.skew,
