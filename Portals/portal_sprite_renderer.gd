@@ -23,7 +23,7 @@ func _draw():
 						deg_to_rad(
 							portal.port_rot(sprite.global_rotation_degrees)
 						), 
-						sprite.scale,
+						portal.port_scale(sprite.global_scale),
 						sprite.skew,
 						portal.port_pos(sprite.global_position)
 					)

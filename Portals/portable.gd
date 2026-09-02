@@ -12,12 +12,14 @@ class RoomMovement:
 	var pos: Vector2
 	var rot: float
 	var scl: Vector2
+	var portal
 	
-	func _init(_room: PortalRoom, _pos: Vector2, _rot: float, _scl: Vector2):
+	func _init(_room: PortalRoom, _pos: Vector2, _rot: float, _scl: Vector2, _portal = null):
 		room = _room
 		pos = _pos
 		rot = _rot
 		scl = _scl
+		portal = _portal
 		
 
 func _ready():
@@ -40,7 +42,8 @@ func get_move(movement: Vector2):
 				portal.other.room,
 				portal.port_pos(end),
 				portal.port_rot(global_rotation_degrees),
-				portal.port_scale(global_scale)
+				portal.port_scale(global_scale),
+				portal
 			)
 			
 	return RoomMovement.new(current_room, end, global_rotation_degrees, global_scale)
