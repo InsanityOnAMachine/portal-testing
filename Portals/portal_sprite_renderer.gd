@@ -24,7 +24,7 @@ func _draw():
 							portal.port_rot(sprite.global_rotation_degrees)
 						), 
 						portal.port_scale(sprite.global_scale),
-						sprite.skew,
+						sprite.global_skew,
 						portal.port_pos(sprite.global_position)
 					)
 				)
