@@ -113,6 +113,9 @@ func _process(_delta):
 
 func process_colliding_portables():
 	if !renderer: return
+	if !visible:
+		if !renderer.intermediate_bodies[self].is_empty(): renderer.intermediate_bodies[self] = []
+		return
 	
 	var params = PhysicsShapeQueryParameters2D.new()
 	params.collide_with_areas = true

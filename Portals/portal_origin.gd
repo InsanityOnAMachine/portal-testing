@@ -73,6 +73,7 @@ func get_meshes(room: PortalRoom, pos: Vector2, iter = 0, cast_from = null, min_
 	for portal in room.portals:
 		# heh, no, this is the portal we're looking in FROM, no use considering it.
 		if portal == cast_from: continue
+		if !portal.visible: continue
 		
 		var vis_range = get_visible_portal_range(portal, pos, cast_from, min_limit, max_limit)
 		

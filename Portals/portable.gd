@@ -30,6 +30,7 @@ func _ready():
 func get_move(movement: Vector2):
 	var end = global_position + movement
 	for portal in current_room.portals.filter(func(x): return x.is_in_front(global_position) and not x.is_in_front(end)):
+		if !portal.visible: continue
 		var distance = portal.distance_to(global_position)
 		
 		var amount_along_normal = movement.dot(portal.get_out_normal())
